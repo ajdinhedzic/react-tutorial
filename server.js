@@ -31,7 +31,7 @@ app.get('/comments.json', function(req, res) {
 
 app.post('/comments.json', function(req, res) {
   fs.readFile('comments.json', function(err, data) {
-    console.log(data);
+    console.log("DATA coming in is: " + data);
     var comments = JSON.parse(data);
     comments.push(req.body);
     fs.writeFile('comments.json', JSON.stringify(comments, null, 4), function(err) {
